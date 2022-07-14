@@ -1,0 +1,19 @@
+{
+  "name": "directus-spec-openapi-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-api:directusSpec": "openapi-generator-cli generate -i spec.json -g typescript-axios -o generated-client/directusSpec --skip-validate-spec --type-mappings=Date=string --additional-properties='usePromises=true,useES6=true'",
+    "build-api:adjustedSpec": "openapi-generator-cli generate -i spec-adjusted.json -g typescript-axios -o generated-client/adjustedSpec --skip-validate-spec --type-mappings=Date=string --additional-properties='usePromises=true,useES6=true'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.5.1"
+  },
+  "dependencies": {
+    "@redocly/cli": "^1.0.0-beta.104"
+  }
+}
